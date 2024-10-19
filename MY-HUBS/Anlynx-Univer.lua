@@ -44,6 +44,12 @@ Tab:AddButton({
       		loadstring(game:HttpGet(('https://raw.githubusercontent.com/begginerprogram/Orionlib/refs/heads/main/esp.lua')))()
   	end    
 })
+Tab:AddButton({
+	Name = "Infinite Yield FE",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/begginerprogram/Orionlib/refs/heads/main/yield.lua')))()
+  	end    
+})
 local Tab = Window:MakeTab({
 	Name = "Other Games",
 	Icon = "rbxassetid://4483345998",
