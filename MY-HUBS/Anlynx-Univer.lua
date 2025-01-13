@@ -88,6 +88,6 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Prison Life Admin 2",
 	Callback = function()
-      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prizzlife')))()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prisonlife2')))()
   	end    
 })
