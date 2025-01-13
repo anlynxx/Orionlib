@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Caguei foi na cueca sabia", HidePremium = false, SaveConfig = true, ConfigFolder = "AnlynxHub"})
+local Window = OrionLib:MakeWindow({Name = "Anlynx Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "AnlynxHub"})
 local Tab = Window:MakeTab({
 	Name = "Universal",
 	Icon = "rbxassetid://4483345998",
@@ -45,9 +45,15 @@ Tab:AddButton({
   	end    
 })
 Tab:AddButton({
-	Name = "Infinite Yield FE",
+	Name = "Infinite Yield",
 	Callback = function()
       		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/yield.lua')))()
+  	end    
+})
+Tab:AddButton({
+	Name = "SUS HUB",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/sus-hub.lua')))()
   	end    
 })
 local Tab = Window:MakeTab({
@@ -74,8 +80,9 @@ Tab:AddButton({
   	end    
 })
 Tab:AddButton({
-	Name = "Prison Life (Tiger Admin)",
+	Name = "Prison Life Admin",
 	Callback = function()
       		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prizzlife')))()
   	end    
 })
+
