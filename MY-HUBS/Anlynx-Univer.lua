@@ -76,6 +76,6 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Prison Life (Tiger Admin)",
 	Callback = function()
-      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/tiger.lua')))()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prizzlife')))()
   	end    
 })
