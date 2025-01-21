@@ -56,6 +56,12 @@ Tab:AddButton({
       		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/sus-hub.lua')))()
   	end    
 })
+Tab:AddButton({
+	Name = "Simple Spy V3",
+	Callback = function()
+      		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
+  	end    
+})
 local Tab = Window:MakeTab({
 	Name = "Other Games",
 	Icon = "rbxassetid://4483345998",
