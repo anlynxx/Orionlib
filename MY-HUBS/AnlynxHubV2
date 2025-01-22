@@ -1,3 +1,6 @@
+--[[
+   https://discord.gg/2qVfTfmcVX
+]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/MY-HUBS/r6r15"))()
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/apple"))()
