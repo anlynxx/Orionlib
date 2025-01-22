@@ -1,3 +1,6 @@
+--[[
+   https://discord.gg/2qVfTfmcVX
+]]
 -- Feel free to modify, contact pystyt on discord if u want to show me the modifications you did to the script, thanks alot
 -- Detect R6 or R15
 local player = game.Players.LocalPlayer
