@@ -2,7 +2,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/apple"))()
 
-local window = library:init("Anlynx Hub V2 (RShift to Hide)", true, Enum.KeyCode.RightShift, true)
+local window = library:init("Anlynx Hub V2.0.2 (RShift to Hide)", true, Enum.KeyCode.RightShift, true)
 
 window:Divider("Universal")
 local sectionA = window:Section("Player Settings")
