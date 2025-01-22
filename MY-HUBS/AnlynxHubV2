@@ -95,15 +95,3 @@ end)
 
 windows:Divider("Fling Things and People")
 local sectionE = window:Section("Settings")
-sectionD:Button("Extra Features", function() 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FTAP2.lua')))()
-end)
-sectionD:TextField("Flinging Strengh", "Enter Fling Force", function(Status)
-local bodyvel_Name = "FlingVelocity"
-local userinputs = game:GetService("UserInputService")
-local w = game:GetService("Workspace")
-local r = game:GetService("RunService")
-local d = game:GetService("Debris")
-local strength = Status
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FTAP.lua')))()
-end)
