@@ -2,14 +2,14 @@
    https://discord.gg/2qVfTfmcVX
 ]]
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Anlynx Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "AnlynxHub"})
+local Window = OrionLib:MakeWindow({Name = "Anlynx Hub (DEPRECATED)", HidePremium = false, SaveConfig = true, ConfigFolder = "AnlynxHub"})
 local Tab = Window:MakeTab({
 	Name = "Universal",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 local Section = Tab:AddSection({
-	Name = "Section"
+	Name = "Get Anlynx Hub V2!"
 })
 Tab:AddSlider({
 	Name = "Speed",
@@ -54,15 +54,9 @@ Tab:AddButton({
   	end    
 })
 Tab:AddButton({
-	Name = "SUS HUB",
+	Name = "Anlynx Hub V2",
 	Callback = function()
-      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/sus-hub.lua')))()
-  	end    
-})
-Tab:AddButton({
-	Name = "Simple Spy V3",
-	Callback = function()
-      		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/MY-HUBS/AnlynxHubV2"))()
   	end    
 })
 local Tab = Window:MakeTab({
@@ -95,8 +89,8 @@ Tab:AddButton({
   	end    
 })
 Tab:AddButton({
-	Name = "Prison Life Admin 2",
+	Name = "Anlynx Hub V2",
 	Callback = function()
-      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prisonlife2')))()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/MY-HUBS/AnlynxHubV2"))()
   	end    
 })
