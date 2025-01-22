@@ -1,3 +1,6 @@
+--[[
+   https://discord.gg/2qVfTfmcVX
+]]
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Anlynx Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "AnlynxHub"})
 local Tab = Window:MakeTab({
