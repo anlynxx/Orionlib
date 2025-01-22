@@ -94,7 +94,7 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/ref
 end)
 
 windows:Divider("Fling Things and People")
-local sectionE = window:Section(Settings)
+local sectionE = window:Section("Settings")
 sectionD:Button("Extra Features", function() 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FTAP2.lua')))()
 end)
