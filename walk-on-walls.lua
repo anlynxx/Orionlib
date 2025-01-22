@@ -1,4 +1,8 @@
 --[[
+   https://discord.gg/2qVfTfmcVX
+]]
+
+--[[
 local _p = game:WaitForChild("Players")
 local _plr = _p.ChildAdded:Wait()
 if _plr == _p.LocalPlayer then
