@@ -1,121 +1,94 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/MY-HUBS/r6r15"))()
-local Luminosity = loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/UIUX", true))()
 
-local Window = Luminosity.new("Anlynx Hub V2", "v2.0.1", 4370345701)
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/apple"))()
 
-local Tab1 = Window.Tab("Universal", 6026568198)
-local Folder = Tab1.Folder("Player Settings", "Change Player Characteristics")
-Folder.Slider("Speed", {Precise = true, Default = 16, Min = 1, Max = 425}, function(Status)
-loadstring(game:HttpGet(('loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FullBright')))()
-')))()
+local window = library:init("Anlynx Hub V2 (RShift to Hide)", true, Enum.KeyCode.RightShift, true)
 
+window:Divider("Universal")
+local sectionA = window:Section("Player Settings")
+sectionA:TextField("Player Speed", "Enter Speed", function(Status)
+    getgenv().Enabled = true -- change to false then execute again to turn off
+getgenv().Speed = Status -- change speed to the number you want
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/speed')))()
 end)
-
-Folder.Slider("Maximum Zoom Distance", {Precise = true, Default = 0, Min = 0, Max = 1000}, function(Status)
+sectionA:TextField("Player Max Zoom", "Enter Max Zoom", function(Status)
 game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = Status
 end)
-
-Folder.Button("FullBright", "Execute", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FullBright')))()
+sectionA:Button("Enable FullBright (Disables Shadows)", function() 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FullBright')))()
 end)
 
--------
-local Folder = Tab1.Folder("Scripts", "Universal Scripts")
-Folder.Button("Infinite Yield", "Execute", function()
-    print("Universal.Scripts.InfiniteYield Clicked")
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/yield.lua')))()
-    print("Universal.Scripts.InfiniteYield Executed")
+local sectionA = window:Section("Universal Scripts")
+sectionA:Button("Infinite Yield", function() 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/yield.lua')))()
+end)
+sectionA:Button("Walk on Walls FE", function() 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/walk-on-walls.lua')))()
+
+end)
+sectionA:Button("Hamster Ball FE", function() 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/hamster-ball.lua')))()
+
+end)
+sectionA:Button("Fling FE (Without spinning character)", function() 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/Fling.lua')))()
+
+end)
+sectionA:Button("ESP / TRACERS", function() 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/esp.lua')))()
+
+end)
+sectionA:Button("Simple Spy V3", function() 
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
+
 end)
 
-Folder.Button("Walk on Walls", "Execute", function()
-    print("Universal.Scripts.WalkonWalls Clicked")
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/walk-on-walls.lua')))()
-    print("Universal.Scripts.WalkonWalls Executed")
-end)
-
-Folder.Button("Hamster Ball", "Execute", function()
-    print("Universal.Scripts.HamsterBall Clicked")
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/hamster-ball.lua')))()
-    print("Universal.Scripts.HamsterBall Executed")
-end)
-
-Folder.Button("Fling FE (Without Character Spinning)", "Execute", function()
-    print("Universal.Scripts.FlingFE Clicked")
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/Fling.lua')))()
-    print("Universal.Scripts.FlingFE Executed")
-end)
-
-Folder.Button("ESP/TRACERS", "Execute", function()
-    print("Universal.Scripts.EspTracer Clicked")
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/esp.lua')))()
-    print("Universal.Scripts.EspTracer Executed")
-end)
-
-Folder.Button("Simple Spy V3", "Execute", function()
-    print("Universal.Scripts.Simplespyv3 Clicked")
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
-    print("Universal.Scripts.Simplespyv3 Executed")
-end)
-
-------------
-local Folder = Tab1.Folder("SUS HUB R6", "Universal Scripts")
-Folder.Button("Bang V2", "Execute", function()
+local sectionB = window:Section("SUS ANIMATIONS R6")
+sectionB:Button("Bang V2", function() 
 loadstring(game:HttpGet(('https://pastebin.com/raw/aPSHMV6K')))()
 end)
-
-Folder.Button("Get Banged", "Execute", function()
+sectionB:Button("Get Banged", function() 
 loadstring(game:HttpGet(('https://pastebin.com/raw/zHbw7ND1')))()
 end)
-
-Folder.Button("Suck", "Execute", function()
-loadstring(game:HttpGet(('https://pastebin.com/raw/SymCfnAW')))()
+sectionB:Button("Suck", function() 
+   loadstring(game:HttpGet(('https://pastebin.com/raw/SymCfnAW')))()
 end)
-
-Folder.Button("Get Sucked", "Execute", function()
+sectionB:Button("Get Sucked", function() 
 loadstring(game:HttpGet(('https://pastebin.com/raw/FPu4e2Qh')))()
 end)
-
-Folder.Button("Jerk (item)", "Execute", function()
+sectionB:Button("Jerk Off", function() 
 loadstring(game:HttpGet(('https://pastefy.app/wa3v2Vgm/raw')))()
 end)
 
-----------
-local Folder = Tab1.Folder("SUS HUB R15", "Universal Scripts")
-Folder.Button("Bang V2", "Execute", function()
+
+local sectionC = window:Section("SUS ANIMATIONS R15")
+sectionC:Button("Bang V2", function() 
 loadstring(game:HttpGet(('https://pastebin.com/raw/1ePMTt9n')))()
 end)
-
-Folder.Button("Get Banged", "Execute", function()
+sectionC:Button("Get Banged", function() 
 loadstring(game:HttpGet(('https://pastebin.com/raw/7hvcjDnW')))()
 end)
-
-Folder.Button("Suck", "Execute", function()
+sectionC:Button("Suck", function() 
 loadstring(game:HttpGet(('https://pastebin.com/raw/p8yxRfr4')))()
 end)
-
-Folder.Button("Get Sucked", "Execute", function()
+sectionC:Button("Get Sucked", function() 
 loadstring(game:HttpGet(('https://pastebin.com/raw/DyPP2tAF')))()
 end)
-
-Folder.Button("Jerk (item)", "Execute", function()
+sectionC:Button("Jerk Off", function() 
 loadstring(game:HttpGet(('https://pastefy.app/YZoglOyJ/raw')))()
 end)
 
---------
-local Tab2 = Window.Tab("Other Games", 6026568198)
-local Folder = Tab2.Folder("Game-Specific Scripts", "Works on the titled game")
-Folder.Button("Dandy's World", "Execute", function()
+window:Divider("Other Games")
+local sectionD = window:Section("Games")
+sectionD:Button("Dandy's World", function() 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/dandy.lua')))()
 end)
-
-Folder.Button("Natural Disaster Survival", "Execute", function()
+sectionD:Button("Natural Disaster Survival", function() 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/nds.lua')))()
 end)
-
-Folder.Button("Prison Life Admin", "Execute", function()
+sectionD:Button("Prison Life Admin", function() 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prizzlife')))()
 end)
-
-Folder.Button("Prison Life Admin 2", "Execute", function()
+sectionD:Button("Prison Life Admin 2", function() 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prisonlife2')))()
 end)
