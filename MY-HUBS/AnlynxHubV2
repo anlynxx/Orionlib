@@ -1,5 +1,5 @@
 --[[
-   Skibidi
+   Skibidi piro bora biu
 ]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/MY-HUBS/r6r15"))()
 
