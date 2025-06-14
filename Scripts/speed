@@ -1,6 +1,4 @@
---[[
-   https://discord.gg/2qVfTfmcVX
-]]
+--
 local players = game:GetService("Players")
 local function bypassWalkSpeed()
     if getgenv().executed then
