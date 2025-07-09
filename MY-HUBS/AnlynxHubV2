@@ -101,6 +101,9 @@ local sectionD = window:Section("Games")
 sectionD:Button("Dandy's World", function() -- Just kys lil bro
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/dandy.lua')))()
 end)
+sectionD:Button("Steal a Baddie", function() -- Just kys lil bro
+loadstring(game:HttpGet(('https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/stealabaddie')))()
+end)
 sectionD:Button("Natural Disaster Survival", function() 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/nds.lua')))()
 end)
@@ -109,9 +112,6 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/ref
 end)
 sectionD:Button("Prison Life Admin 2", function() -- DE NOVO!
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prisonlife2')))()
-end)
-sectionD:Button("MURDER MYSTERY 2", function() 
-loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
 end)
 sectionD:Button("MURDER MYSTERY 2", function() 
 loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
