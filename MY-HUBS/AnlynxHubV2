@@ -56,6 +56,11 @@ sectionA:Button("Simple Spy V3", function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
 
 end)
+sectionA:Button("Unanchor Object Orbit", function() 
+    pcall(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-AURA/main/kawaii_aura.lua", true))()
+end)
+end)
 
 
 --agora sim ein 
