@@ -253,7 +253,12 @@ local Button = Tab:CreateButton({
 })
 
 
-
+local Button = Tab:CreateButton({
+   Name = "Field Trip Z",
+   Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
+   end,
+})
 
 
 
