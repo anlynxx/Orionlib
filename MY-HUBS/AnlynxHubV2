@@ -86,6 +86,12 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Fake Lag",
+   Callback = function()
+       loadstring(game:HttpGet('https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/fakelag'))()
+   end,
+})
 
 local Tab = Window:CreateTab("Scripts Universais", "rewind")
 
@@ -259,8 +265,6 @@ local Button = Tab:CreateButton({
        loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
    end,
 })
-
-
 
 
 
