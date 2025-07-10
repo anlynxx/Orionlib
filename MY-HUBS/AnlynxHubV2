@@ -1,146 +1,274 @@
---[[
-   Bora biu porra!
-]]
--- aqui começa o script né chat
+--Webylynx Hub V2
 
--- isso aqui checa se seu avatar e r6 ou r15 ou r34 ops, digitei errado, bora biu ne 
+-- O check do r6 / r15
 loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/MY-HUBS/r6r15"))()
 
--- aqui carrega a disgraça do ui library fudido hosteado no meu proprio rep do github 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/apple"))()
 
--- aqui é a porra do titulo da GUI ne 
-local window = library:init("Anlynx Hub V2.0.2 (RShift to Hide)", true, Enum.KeyCode.RightShift, true)
 
--- O titulo da aba de Universais, ta lendo ainda pq porra
-window:Divider("Universal")
+-- A UI Library
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
--- a aba de configuraçoes du pleier jhdfuhiahu
-local sectionA = window:Section("Player Settings")
+-- O window Gui
+local Window = Rayfield:CreateWindow({
+   Name = "Webylynx Hub V2",
+   Icon = 0, -- icone do troço
+   LoadingTitle = "Loading Anlynx Hub...",
+   LoadingSubtitle = "by webylynx",
+   ShowText = "Rayfield", -- for mobile users to unhide rayfield, change if you'd like
+   Theme = "Bloom", -- https://docs.sirius.menu/rayfield/configuration/themes
 
--- vou parar de ficar comentando no meu proprio codigo, ta chato dms
-sectionA:TextField("Player Speed", "Enter Speed", function(Status)
-    getgenv().Enabled = true -- sabe o que que é isso? não sabe? fo-da-se, ta lendo pq quer porra
-getgenv().Speed = Status -- hmm o que sera que isso possivelmente pode fazer
+   ToggleUIKeybind = Enum.KeyCode.RightShift, -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = true,
+   DisableBuildWarnings = true,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = Webylynxhub, -- pasta do hub
+      FileName = "Webylynx Hub"
+   },
+
+   Discord = {
+      Enabled = false, 
+      Invite = "noinvitelink", 
+      RememberJoins = true 
+   },
+
+   KeySystem = false, 
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = {"Hello"}
+   }
+})
+
+--Primeira Tab
+local Tab = Window:CreateTab("Config. Player", "rewind")
+-- Uma seção/separação
+local Section = Tab:CreateSection("Configurações do Player")
+-- slider
+local Slider = Tab:CreateSlider({
+   Name = "Velocidade",
+   Range = {0, 100},
+   Increment = 2,
+   Suffix = "Velocidade",
+   CurrentValue = 16,
+   Flag = "Slider1", 
+   Callback = function(Status)
+    getgenv().Enabled = true 
+getgenv().Speed = Status 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/speed')))()
-end) -- MEU DEUS... UM LOADSTRING OH MY GOD, CHOCANTE
+   end,
+})
 
-sectionA:TextField("Player Max Zoom", "Enter Max Zoom", function(Status)
-game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = Status
-end)
-sectionA:Button("Enable FullBright (Disables Shadows)", function() -- Fds vcs lendo, vou comentar nisso aqui n
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FullBright')))()
-end)
+local Slider = Tab:CreateSlider({
+   Name = "Distancia Max. da Camera",
+   Range = {0, 1000},
+   Increment = 2,
+   Suffix = "Studs",
+   CurrentValue = 100,
+   Flag = "Slider2", 
+   Callback = function(Status)
+    game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = Status
+   end,
+})
 
-local sectionA = window:Section("Universal Scripts")
-sectionA:Button("Infinite Yield", function() 
+local Divider = Tab:CreateDivider()
+--botão
+local Button = Tab:CreateButton({
+   Name = "Fullbright - Desabilitar Sombras",
+   Callback = function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FullBright')))()
+   end,
+})
+
+
+local Tab = Window:CreateTab("Scripts Universais", "rewind")
+
+local Button = Tab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/yield.lua')))()
-end)
-sectionA:Button("Walk on Walls FE", function() 
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/walk-on-walls.lua')))()
+   end,
+})
 
-end)
-sectionA:Button("Hamster Ball FE", function() 
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/hamster-ball.lua')))()
+local Button = Tab:CreateButton({
+   Name = "Andar nas Paredes FE",
+   Callback = function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/walk-on-walls.lua')))()
+   end,
+})
 
-end)
-sectionA:Button("Fling FE (Without spinning character)", function() 
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/Fling.lua')))()
+local Button = Tab:CreateButton({
+   Name = "Bola de Hamster FE",
+   Callback = function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/hamster-ball.lua')))()
+   end,
+})
 
-end)
-sectionA:Button("ESP / TRACERS", function() 
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/esp.lua')))()
+local Button = Tab:CreateButton({
+   Name = "Fling FE (Personagem não fica girando)",
+   Callback = function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/Fling.lua')))()
+   end,
+})
 
-end)
-sectionA:Button("Simple Spy V3", function() 
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
+local Button = Tab:CreateButton({
+   Name = "ESP / TRACERS",
+   Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/esp.lua')))()
+   end,
+})
 
-end)
-sectionA:Button("Unanchor Object Orbit", function() 
-    pcall(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-AURA/main/kawaii_aura.lua", true))()
-end)
-end)
-
-
---agora sim ein 
-local sectionB = window:Section("SUS ANIMATIONS R6")
-sectionB:Button("Bang V2", function() 
-loadstring(game:HttpGet(('https://pastebin.com/raw/aPSHMV6K')))()
-end)
-sectionB:Button("Get Banged", function() 
-loadstring(game:HttpGet(('https://pastebin.com/raw/zHbw7ND1')))()
-end)
-sectionB:Button("Suck", function() 
-   loadstring(game:HttpGet(('https://pastebin.com/raw/SymCfnAW')))()
-end)
-sectionB:Button("Get Sucked", function() 
-loadstring(game:HttpGet(('https://pastebin.com/raw/FPu4e2Qh')))()
-end)
-sectionB:Button("Jerk Off", function() 
-loadstring(game:HttpGet(('https://pastefy.app/wa3v2Vgm/raw')))()
-end)
+local Button = Tab:CreateButton({
+   Name = "Simple Spy V3",
+   Callback = function()
+   loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
+   end,
+})
 
 
--- GYATTTTT
-local sectionC = window:Section("SUS ANIMATIONS R15")
-sectionC:Button("Bang V2", function() 
-loadstring(game:HttpGet(('https://pastebin.com/raw/1ePMTt9n')))()
-end)
-sectionC:Button("Get Banged", function() 
-loadstring(game:HttpGet(('https://pastebin.com/raw/7hvcjDnW')))()
-end)
-sectionC:Button("Suck", function() 
-loadstring(game:HttpGet(('https://pastebin.com/raw/p8yxRfr4')))()
-end)
-sectionC:Button("Get Sucked", function() 
-loadstring(game:HttpGet(('https://pastebin.com/raw/DyPP2tAF')))()
-end)
-sectionC:Button("Jerk Off", function() 
-loadstring(game:HttpGet(('https://pastefy.app/YZoglOyJ/raw')))()
-end)
+local Tab = Window:CreateTab("Emotes SUS R6", "rewind")
+
+local Button = Tab:CreateButton({
+   Name = "Bang V2",
+   Callback = function()
+     loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R6/bangv2"))()  
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Get Banged",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R6/getbanged"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Suck",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R6/suck"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Get Sucked",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R6/getsucked"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Descabelar o Palhaço",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R6/Jerkoff"))()
+   end,
+})
 
 
-window:Divider("Other Games")
-local sectionD = window:Section("Games")
-sectionD:Button("Dandy's World", function() -- Just kys lil bro
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/dandy.lua')))()
-end)
-sectionD:Button("Steal a Baddie", function() -- Just kys lil bro
-loadstring(game:HttpGet(('https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/stealabaddie')))()
-end)
-sectionD:Button("Natural Disaster Survival", function() 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/nds.lua')))()
-end)
-sectionD:Button("Prison Life Admin", function() -- O GOAT!
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prizzlife')))()
-end)
-sectionD:Button("Prison Life Admin 2", function() -- DE NOVO!
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prisonlife2')))()
-end)
-sectionD:Button("MURDER MYSTERY 2", function() 
-loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
-end)
+local Tab = Window:CreateTab("Emotes SUS R15", "rewind")
+
+local Button = Tab:CreateButton({
+   Name = "Bang V2",
+   Callback = function()
+     loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R15/bangv2"))()  
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Get Banged",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R15/getbanged"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Suck",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R15/suck"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Get Sucked",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R15/getsucked"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Descabelar o Palhaço",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/R15/Jerkoff"))()
+   end,
+})
 
 
-local sectionE = window:Section("Fling Things and People")
-sectionE:Button("Extra Features", function() 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FTAP2.lua')))()
-end)
-sectionE:TextField("Flinging Strengh", "Enter Fling Force", function(Status)
-local bodyvel_Name = "FlingVelocity"
-local userinputs = game:GetService("UserInputService")
-local w = game:GetService("Workspace")
-local r = game:GetService("RunService")
-local d = game:GetService("Debris")
-local strength = Status
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/FTAP.lua')))()
-end)
+local Tab = Window:CreateTab("Jogos", "rewind")
+
+local Button = Tab:CreateButton({
+   Name = "Natural Disaster Survival",
+   Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/nds.lua')))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Prison Life - Tiger Admin",
+   Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/prizzlife')))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Steal a Baddie",
+   Callback = function()
+       loadstring(game:HttpGet(('https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/stealabaddie')))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Murder Mystery 2",
+   Callback = function()
+       loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Dandy's World",
+   Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/dandy.lua')))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Fling Things And People",
+   Callback = function()
+       
+   end,
+})
 
 
-local sectionF = window:Section("Reanimation Script")
-sectionF:Label("REANIMATION ONLY WORKS IN MIC UP OR")
-sectionF:Label("MEET PEOPLE ACROSS THE WORLD!")
-sectionF:Button("Execute Stalkie (Reanimation)", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/anlynxx/Orionlib/refs/heads/main/Reanimation')))()
-end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rayfield:LoadConfiguration()
