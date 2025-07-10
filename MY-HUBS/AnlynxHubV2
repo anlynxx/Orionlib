@@ -246,9 +246,9 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Fling Things And People",
+   Name = "Roube um Brainrot",
    Callback = function()
-       
+       loadstring(game:HttpGet("https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/stealabrainrot", true))()
    end,
 })
 
