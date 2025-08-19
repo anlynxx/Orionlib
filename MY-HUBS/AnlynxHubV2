@@ -1,3 +1,5 @@
+-- loadstring(game:HttpGet(('https://github.com/anlynxx/Orionlib/raw/refs/heads/main/MY-HUBS/AnlynxHubV2')))()
+
 --Webylynx Hub V2
 
 -- O check do r6 / r15
@@ -241,6 +243,13 @@ local Button = Tab:CreateButton({
    Name = "Steal a Baddie",
    Callback = function()
        loadstring(game:HttpGet(('https://github.com/anlynxx/Orionlib/raw/refs/heads/main/Scripts/stealabaddie')))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Night Shift at Chuck E. Cheese’s",
+   Callback = function()
+       loadstring(game:HttpGet("https://paste.yt/P38778.txt"))
    end,
 })
 
